@@ -1,0 +1,44 @@
+>>> add_integer = __import__("0-add_integer").add_integer
+
+Check Cases the Function
+- Add Two integers
+>>> add_integer(3, 6)
+9
+
+- Add String and Integer
+>>> add_integer('hello', 7)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+- Add Tuple and Float
+>>> add_integer((1, 2), 7.0)
+Traceback (most recent call last):
+    ...
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'tuple'
+
+- Add Two Floats
+>>> add_integer(4.50, 3.0)
+7
+
+- Add None
+>>> add_integer(None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+- Add One Int and One Float
+>>> add_integer(8, 6.65)
+14
+
+- Add Int and List
+>>> add_integer(6, [2,'A', 3.4])
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+- Function Void
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
