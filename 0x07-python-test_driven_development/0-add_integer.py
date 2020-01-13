@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" Program addition tow integer. """
+""" Program addition two integer. """
 
 def add_integer(a, b=98):
 
