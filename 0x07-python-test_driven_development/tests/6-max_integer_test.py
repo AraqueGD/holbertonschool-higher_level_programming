@@ -22,3 +22,6 @@ class TestMaxInteger(unittest.TestCase):
             Send First great Number
         """
         self.assertEqual(max_integer([100, 1, 1, 1]), 100)
+
+if __name__ == "__main__":
+    unittest.main()
