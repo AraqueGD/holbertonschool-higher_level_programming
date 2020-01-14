@@ -1,27 +1,33 @@
 #!/usr/bin/python3
 """Module to find the max integer in a list
 """
+
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
 
-    def TestNone(self):
-        """ Send None in Function """
-        self.assertIsNone(max_integer([]))
+    def test_docstring(self):
+        self.assertTrue(len(__import__('6-max_integer').__doc__) > 1)
 
-    def TestRaises(self):
-        """
-            Send Parameter None in Function
-        """
+    def test_func_doc(self):
+        self.assertTrue(len(max_integer.__doc__) > 1)
+
+    def test_emptyargs(self):
+        self.assertIsNone(max_integer([]), None)
         with self.assertRaises(TypeError):
             max_integer(None)
+        with self.assertRaises(TypeError):
+            max_integer([1, 2, None])
 
-    def Test_begining(self):
-        """
-            Send First great Number
-        """
-        self.assertEqual(max_integer([100, 1, 1, 1]), 100)
+    def test_integers(self):
+        self.assertEqual(max_integer([1, 7, 8]), 8)
+
+    def test_neginteger(self):
+        self.assertEqual(max_integer([-1, -2, -30]), -1)
+
+    def test_alpha(self):
+        self.assertEqual(max_integer(["xyz"]), "xyz")
 
 if __name__ == "__main__":
     unittest.main()
