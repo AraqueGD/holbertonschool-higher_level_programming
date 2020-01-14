@@ -1,0 +1,18 @@
+# 5-text_indentation.txt
+
+===============================
+ How to Use 5-text_indentation.py
+===============================
+
+This library is very simple, since it only has one function called
+``text_indentation()``.
+
+Usage
+====
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+- Print (Hello)
+>>> text_indentation("Hello?")
+Hello?
+<BLANKLINE>
