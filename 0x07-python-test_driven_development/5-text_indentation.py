@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Function Separate Text """
 
+
 def text_indentation(text):
 
     """
