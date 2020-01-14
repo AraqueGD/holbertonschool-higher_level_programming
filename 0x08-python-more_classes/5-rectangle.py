@@ -53,3 +53,6 @@ class Rectangle:
             return 0
         else:
             return (2 * (self.width + self.__height))
+
+    def __del__(self):
+        print("Bye rectangle...")
