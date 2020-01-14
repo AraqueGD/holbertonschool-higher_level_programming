@@ -1,0 +1,39 @@
+# 3-say_my_name.txt
+
+===============================
+ How to Use 3-say_my_name.py
+===============================
+
+This library is very simple, since it only has one function called
+``say_my_name()``.
+
+Usage
+====
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+- Send Int, Name
+>>> say_my_name(4, 'Araque')
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+- Send Name, last Name
+>>> say_my_name('Camilo', 'Araque')
+My Name is Camilo Araque
+
+- Send Name, Float
+>>> say_my_name('Camilo', 5)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+- Send None
+>>> say_my_name(None)
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+- Send Name, Void
+>>> say_my_name('Milo')
+My Name is Milo 
