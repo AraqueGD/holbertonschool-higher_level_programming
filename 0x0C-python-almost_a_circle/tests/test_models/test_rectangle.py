@@ -52,5 +52,49 @@ class Test_Rectangle(unittest.TestCase):
             print(Rectangle(2, 4, 5, 6, 7).__height)
 
 
+class test_Raises_Validation(unittest.TestCase):
+    """ Test width, height, x and y Validation """
+
+    def test_width_type_validation(self):
+        """ Test error Type Validation """
+        with self.assertRaises(TypeError):
+            Rectangle("3", 4)
+
+    def test_width_value_validation(self):
+        """ Test error Value Validation """
+        with self.assertRaises(ValueError):
+            Rectangle(-2, 4)
+
+    def test_height_type_validation(self):
+        """ Test error Type Validation """
+        with self.assertRaises(TypeError):
+            Rectangle(3, "4")
+
+    def test_height_value_validation(self):
+        """ Test error Value Validation """
+        with self.assertRaises(ValueError):
+            Rectangle(2, -4)
+
+    def test_x_type_validation(self):
+        """ Test error Type Validation """
+        with self.assertRaises(TypeError):
+            Rectangle(3, 4, "s")
+
+    def test_x_value_validation(self):
+        """ Test error Value Validation """
+        with self.assertRaises(ValueError):
+            Rectangle(2, 4, -5)
+
+    def test_y_type_validation(self):
+        """ Test error Type Validation """
+        with self.assertRaises(TypeError):
+            Rectangle(3, 4, 3, "8")
+
+    def test_y_value_validation(self):
+        """ Test error Value Validation """
+        with self.assertRaises(ValueError):
+            Rectangle(2, 4, 5, -8)
+
+
 if __name__ == "__main__":
     unittest.main()
