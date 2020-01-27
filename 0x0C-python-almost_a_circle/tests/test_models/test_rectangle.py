@@ -110,5 +110,14 @@ class test_area_rectangle(unittest.TestCase):
         self.assertEqual(r8.area(), 6)
 
 
+class test_str_rectangle(unittest.TestCase):
+    """ Test return str Function """
+
+    def test_str(self):
+        """ Str Return """
+        r2 = Rectangle(5, 5, 1)
+        self.assertEqual(str(r2), "[Rectangle] (19) 1/0 - 5/5")
+
+
 if __name__ == "__main__":
     unittest.main()
