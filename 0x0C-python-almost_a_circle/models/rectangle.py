@@ -86,6 +86,7 @@ class Rectangle(Base):
             print('')
 
     def __str__(self):
+        """ Return __str__ method """
         return ("[{self.__class__.__name__}] ({}) {}/{} - {}/{}"
                 .format(self.id,
                         self.__x,
@@ -93,3 +94,21 @@ class Rectangle(Base):
                         self.__width,
                         self.__height,
                         self=self))
+
+    def update(self, *args):
+        idx = 0
+        for arg in args:
+            if (idx == 0):
+                if (arg == None):
+                    self.__init__(self.width, self.height, self.x, self.y)
+                else:
+                    self.id = arg
+            elif (idx == 1):
+                self.width = arg
+            elif (idx == 2):
+                self.height = arg
+            elif (idx == 3):
+                self.x = arg
+            elif (idx == 4):
+                self.y = arg
+            idx += 1
