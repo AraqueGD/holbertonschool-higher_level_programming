@@ -140,36 +140,72 @@ class test_update_rectangle(unittest.TestCase):
         """ Set up for all methods """
         Base._Base__nb_objects = 0
 
-    def test_update_none_arg(self):
-        """ Test Update None arguments """
-        r_test = Rectangle(10, 10, 10, 10)
-        r_test.update(None)
-        self.assertEqual(str(r_test), "[Rectangle] (2) 10/10 - 10/10")
+    def test_update_arg_void(self):
+        r_test = Rectangle(2, 5, 10, 11, 12)
+        r_test.update()
+        self.assertEqual(r_test.width, 2)
+        self.assertEqual(r_test.height, 5)
+        self.assertEqual(r_test.x, 10)
+        self.assertEqual(r_test.y, 11)
+        self.assertEqual(r_test.id, 12)
 
-    def test_update_one_arg(self):
-        r_test = Rectangle(10, 10, 10, 10)
+    def test_update_arg_id(self):
+        r_test = Rectangle(2, 5, 10, 11, 12)
         r_test.update(89)
-        self.assertEqual(str(r_test), "[Rectangle] (89) 10/10 - 10/10")
+        self.assertEqual(r_test.width, 2)
+        self.assertEqual(r_test.height, 5)
+        self.assertEqual(r_test.x, 10)
+        self.assertEqual(r_test.y, 11)
+        self.assertEqual(r_test.id, 89)
 
-    def test_update_two_arg(self):
-        r_test = Rectangle(10, 10, 10, 10)
-        r_test.update(89, 2)
-        self.assertEqual(str(r_test), "[Rectangle] (89) 10/10 - 2/10")
+    def test_update_arg_width(self):
+        r_test = Rectangle(2, 5, 10, 11, 12)
+        r_test.update(89, 1)
+        self.assertEqual(r_test.width, 1)
+        self.assertEqual(r_test.height, 5)
+        self.assertEqual(r_test.x, 10)
+        self.assertEqual(r_test.y, 11)
+        self.assertEqual(r_test.id, 89)
 
-    def test_update_three_arg(self):
-        r_test = Rectangle(10, 10, 10, 10)
-        r_test.update(89, 2, 6)
-        self.assertEqual(str(r_test), "[Rectangle] (89) 10/10 - 2/6")
+    def test_update_arg_height(self):
+        r_test = Rectangle(2, 5, 10, 11, 12)
+        r_test.update(89, 1, 2)
+        self.assertEqual(r_test.width, 1)
+        self.assertEqual(r_test.height, 2)
+        self.assertEqual(r_test.x, 10)
+        self.assertEqual(r_test.y, 11)
+        self.assertEqual(r_test.id, 89)
 
-    def test_update_four_arg(self):
-        r_test = Rectangle(10, 10, 10, 10)
-        r_test.update(89, 2, 6, 9)
-        self.assertEqual(str(r_test), "[Rectangle] (89) 9/10 - 2/6")
+    def test_update_arg_x(self):
+        r_test = Rectangle(2, 5, 10, 11, 12)
+        r_test.update(89, 1, 2, 3)
+        self.assertEqual(r_test.width, 1)
+        self.assertEqual(r_test.height, 2)
+        self.assertEqual(r_test.x, 3)
+        self.assertEqual(r_test.y, 11)
+        self.assertEqual(r_test.id, 89)
 
-    def test_update_five_arg(self):
-        r_test = Rectangle(10, 10, 10, 10)
-        r_test.update(89, 2, 6, 9, 7)
-        self.assertEqual(str(r_test), "[Rectangle] (89) 9/7 - 2/6")
+    def test_update_arg_y(self):
+        r_test = Rectangle(2, 5, 10, 11, 12)
+        r_test.update(89, 1, 2, 3, 4)
+        self.assertEqual(r_test.width, 1)
+        self.assertEqual(r_test.height, 2)
+        self.assertEqual(r_test.x, 3)
+        self.assertEqual(r_test.y, 4)
+        self.assertEqual(r_test.id, 89)
+
+    def test_update_kwargs(self):
+        r_test = Rectangle(1, 2, 3, 4, 5)
+        r_test.update(id=10)
+        self.assertEqual(r_test.id, 10)
+        r_test.update(width=45)
+        self.assertEqual(r_test.width, 45)
+        r_test.update(height=67)
+        self.assertEqual(r_test.height, 67)
+        r_test.update(x=90)
+        self.assertEqual(r_test.x, 90)
+        r_test.update(y=80)
+        self.assertEqual(r_test.y, 80)
 
 
 if __name__ == "__main__":
