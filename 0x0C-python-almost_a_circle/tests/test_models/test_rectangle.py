@@ -96,5 +96,19 @@ class test_Raises_Validation(unittest.TestCase):
             Rectangle(2, 4, 5, -8)
 
 
+class test_area_rectangle(unittest.TestCase):
+    """ Test Function Araea """
+
+    def test_width_area(self):
+        """ Test width area """
+        r8 = Rectangle(3, 4)
+        self.assertEqual(r8.area(), 12)
+
+    def test_height_area(self):
+        """ Test height area """
+        r8 = Rectangle(3, 2)
+        self.assertEqual(r8.area(), 6)
+
+
 if __name__ == "__main__":
     unittest.main()
