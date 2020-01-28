@@ -141,6 +141,7 @@ class test_update_rectangle(unittest.TestCase):
         Base._Base__nb_objects = 0
 
     def test_update_arg_void(self):
+        """ Update void """
         r_test = Rectangle(2, 5, 10, 11, 12)
         r_test.update()
         self.assertEqual(r_test.width, 2)
@@ -150,6 +151,7 @@ class test_update_rectangle(unittest.TestCase):
         self.assertEqual(r_test.id, 12)
 
     def test_update_arg_id(self):
+        """ Update id """
         r_test = Rectangle(2, 5, 10, 11, 12)
         r_test.update(89)
         self.assertEqual(r_test.width, 2)
@@ -159,6 +161,7 @@ class test_update_rectangle(unittest.TestCase):
         self.assertEqual(r_test.id, 89)
 
     def test_update_arg_width(self):
+        """ Update width """
         r_test = Rectangle(2, 5, 10, 11, 12)
         r_test.update(89, 1)
         self.assertEqual(r_test.width, 1)
@@ -168,6 +171,7 @@ class test_update_rectangle(unittest.TestCase):
         self.assertEqual(r_test.id, 89)
 
     def test_update_arg_height(self):
+        """ Update height """
         r_test = Rectangle(2, 5, 10, 11, 12)
         r_test.update(89, 1, 2)
         self.assertEqual(r_test.width, 1)
@@ -177,6 +181,7 @@ class test_update_rectangle(unittest.TestCase):
         self.assertEqual(r_test.id, 89)
 
     def test_update_arg_x(self):
+        """ Update x """
         r_test = Rectangle(2, 5, 10, 11, 12)
         r_test.update(89, 1, 2, 3)
         self.assertEqual(r_test.width, 1)
@@ -186,6 +191,7 @@ class test_update_rectangle(unittest.TestCase):
         self.assertEqual(r_test.id, 89)
 
     def test_update_arg_y(self):
+        """ Update y """
         r_test = Rectangle(2, 5, 10, 11, 12)
         r_test.update(89, 1, 2, 3, 4)
         self.assertEqual(r_test.width, 1)
@@ -195,6 +201,7 @@ class test_update_rectangle(unittest.TestCase):
         self.assertEqual(r_test.id, 89)
 
     def test_update_kwargs(self):
+        """ Update Kwargs """
         r_test = Rectangle(1, 2, 3, 4, 5)
         r_test.update(id=10)
         self.assertEqual(r_test.id, 10)
