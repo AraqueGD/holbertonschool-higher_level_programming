@@ -215,5 +215,18 @@ class test_update_rectangle(unittest.TestCase):
         self.assertEqual(r_test.y, 80)
 
 
+class test_dict_rectangle(unittest.TestCase):
+    """ Test Dict Function """
+
+    def setUp(self):
+        """ Set up for all methods """
+        Base._Base__nb_objects = 0
+
+    def test_dict(self):
+        r_test = Rectangle(10, 2, 1, 9, 5)
+        r_test1 = {'id': 5, 'width': 10, 'height': 2, 'x': 1, 'y': 9}
+        self.assertDictEqual(r_test1, r_test.to_dictionary())
+
+
 if __name__ == "__main__":
     unittest.main()

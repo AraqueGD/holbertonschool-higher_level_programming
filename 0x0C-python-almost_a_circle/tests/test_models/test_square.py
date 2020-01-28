@@ -44,7 +44,7 @@ class Test_Square_class(unittest.TestCase):
         with self.assertRaises(TypeError):
             Square(None)
 
-    def test_Private_width(self):
+    def test_Private_size(self):
         """ Test in Square Acces for Private Attribute """
         with self.assertRaises(AttributeError):
             print(Square(2, 4, 5, 6).__width)
@@ -56,18 +56,18 @@ class Test_Square_class(unittest.TestCase):
 
 
 class test_Raises_Validation(unittest.TestCase):
-    """ Test width, height, x and y Validation """
+    """ Test size, height, x and y Validation """
 
     def setUp(self):
         """ Set up for all methods """
         Base._Base__nb_objects = 0
 
-    def test_width_type_validation(self):
+    def test_size_type_validation(self):
         """ Test error Type Validation """
         with self.assertRaises(TypeError):
             Square("3", 4)
 
-    def test_width_value_validation(self):
+    def test_size_value_validation(self):
         """ Test error Value Validation """
         with self.assertRaises(ValueError):
             Square(-2, 4)
@@ -110,8 +110,8 @@ class test_area_Square(unittest.TestCase):
         """ Set up for all methods """
         Base._Base__nb_objects = 0
 
-    def test_width_area(self):
-        """ Test width area """
+    def test_size_area(self):
+        """ Test size area """
         s_test = Square(3)
         self.assertEqual(s_test.area(), 9)
 
@@ -127,3 +127,68 @@ class test_str_Square(unittest.TestCase):
         """ Str Return """
         s_test = Square(5)
         self.assertEqual(str(s_test), "[Square] (1) 0/0 - 5")
+
+
+class test_update_Square(unittest.TestCase):
+    """ Testing Function Update Square """
+
+    def setUp(self):
+        """ Set up for all methods """
+        Base._Base__nb_objects = 0
+
+    def test_update_arg_void(self):
+        """ Update void """
+        s_test = Square(2, 10, 11, 12)
+        s_test.update()
+        self.assertEqual(s_test.size, 2)
+        self.assertEqual(s_test.x, 10)
+        self.assertEqual(s_test.y, 11)
+        self.assertEqual(s_test.id, 12)
+
+    def test_update_arg_id(self):
+        """ Update id """
+        s_test = Square(2, 10, 11, 12)
+        s_test.update(89)
+        self.assertEqual(s_test.size, 2)
+        self.assertEqual(s_test.x, 10)
+        self.assertEqual(s_test.y, 11)
+        self.assertEqual(s_test.id, 89)
+
+    def test_update_arg_size(self):
+        """ Update size """
+        s_test = Square(2, 10, 11, 12)
+        s_test.update(89, 1)
+        self.assertEqual(s_test.size, 1)
+        self.assertEqual(s_test.x, 10)
+        self.assertEqual(s_test.y, 11)
+        self.assertEqual(s_test.id, 89)
+
+    def test_update_arg_x(self):
+        """ Update x """
+        s_test = Square(2, 10, 11, 12)
+        s_test.update(89, 1, 2, 3)
+        self.assertEqual(s_test.size, 1)
+        self.assertEqual(s_test.x, 2)
+        self.assertEqual(s_test.y, 3)
+        self.assertEqual(s_test.id, 89)
+
+    def test_update_arg_y(self):
+        """ Update y """
+        s_test = Square(2, 10, 11)
+        s_test.update(89, 1, 3, 4)
+        self.assertEqual(s_test.size, 1)
+        self.assertEqual(s_test.x, 3)
+        self.assertEqual(s_test.y, 4)
+        self.assertEqual(s_test.id, 89)
+
+    def test_update_kwargs(self):
+        """ Update Kwargs """
+        s_test = Square(1, 2, 3, 4)
+        s_test.update(id=10)
+        self.assertEqual(s_test.id, 10)
+        s_test.update(size=45)
+        self.assertEqual(s_test.size, 45)
+        s_test.update(x=90)
+        self.assertEqual(s_test.x, 90)
+        s_test.update(y=80)
+        self.assertEqual(s_test.y, 80)
