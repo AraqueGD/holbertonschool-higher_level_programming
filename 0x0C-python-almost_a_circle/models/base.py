@@ -42,7 +42,8 @@ class Base:
     def from_json_string(json_string):
         """ From json to string """
         if (json_string is None):
-            json_string = []
+            string = []
+            return string
         else:
             return json.loads(json_string)
 
