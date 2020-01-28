@@ -192,3 +192,17 @@ class test_update_Square(unittest.TestCase):
         self.assertEqual(s_test.x, 90)
         s_test.update(y=80)
         self.assertEqual(s_test.y, 80)
+
+
+class test_dict_rectangle(unittest.TestCase):
+    """ Test Dict Function """
+
+    def setUp(self):
+        """ Set up for all methods """
+        Base._Base__nb_objects = 0
+
+    def test_dict(self):
+        """ Test Dict Represetation """
+        s_test = Square(10, 2, 1, 9)
+        s_test1 = {'id': 9, 'size': 10, 'x': 2, 'y': 1}
+        self.assertDictEqual(s_test1, s_test.to_dictionary())
