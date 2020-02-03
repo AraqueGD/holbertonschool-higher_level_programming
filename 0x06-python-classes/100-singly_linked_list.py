@@ -27,7 +27,7 @@ class Node:
     @next_node.setter
     def next_node(self, value):
         """ Setter Next_node """
-        if (value is None or value is not Node):
+        if (not isinstance(value, Node) or value is not None):
             self.__next_node = value
         else:
             raise TypeError("next_node must be a Node object")
