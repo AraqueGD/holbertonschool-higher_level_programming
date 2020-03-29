@@ -9,7 +9,8 @@ if __name__ == "__main__":
     name_db = argv[4]
     try:
         cur.execute(
-            "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(name_db))
+            "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC \
+                 COLLATE latin1_general_cs".format(name_db))
         states = cur.fetchall()
 
         for state in states:
