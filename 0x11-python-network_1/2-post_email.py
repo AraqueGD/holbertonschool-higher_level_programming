@@ -4,15 +4,13 @@ if __name__ == "__main__":
     import urllib.request
     import urllib.parse
 
-    try:
-        url = sys.argv[1]
-        values = {"email": sys.argv[2]}
-        data = urllib.parse.urlencode(values)
-        data = data.encode('ascii')
-        req = urllib.request.Request(url, data)
-        with urllib.request.urlopen(req) as response:
-            Xreq = response.read().decode('utf-8')
-            print(Xreq)
+    url = argv[1]
+    email = argv[2]
+    value = {'email': email}
 
-    except:
-        pass
+    data = urllib.parse.urlencode(value)
+    data = data.encode('ascii')
+    req = urllib.request.Request(url, data)
+    with urllib.request.urlopen(req) as response:
+        body_page = response.read()
+        print(body_page.decode('utf-8'))
