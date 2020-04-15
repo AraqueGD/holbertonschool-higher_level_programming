@@ -3,17 +3,16 @@ if __name__ == "__main__":
     import requests
     from sys import argv
 
-    url = 'http://0.0.0.0:5000/search_user'
-    if (len(argv) > 1):
-        dic = {'q': argv[1]}
+    url = "http://0.0.0.0:5000/search_user"
+    if len(argv) > 1:
+        data = {'q': argv[1]}
     else:
-        dic = {'q': ""}
+        data = {'q': ""}
     try:
-        url = requests.post(url, dic)
-        js = url.json()
-
-        if (not js):
-            print("Not result")
+        r = requests.post(url, data)
+        js = r.json()
+        if not js:
+            print("No result")
         else:
             print("[{}] {}".format(js.get('id'), js.get('name')))
     except ValueError:
