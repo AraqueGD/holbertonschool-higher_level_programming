@@ -6,6 +6,6 @@ if __name__ == "__main__":
     url = requests.get(argv[1])
     error_code = url.status_code
     if (error_code >= 400):
-        print("Error Code: {}".format(error_code))
+        print("Error code: {}".format(error_code))
     else:
         print(url.text)
