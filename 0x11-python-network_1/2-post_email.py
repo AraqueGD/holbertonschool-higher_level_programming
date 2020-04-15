@@ -4,7 +4,7 @@ if __name__ == "__main__":
     import urllib.request
     import urllib.parse
 
-    url = urllib.request.Request(argv[1])
+    url = argv[1]
     email = argv[2]
     value = {'email': email}
 
