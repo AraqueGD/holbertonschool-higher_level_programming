@@ -8,8 +8,7 @@ if __name__ == "__main__":
     else:
         dic = {'q': ""}
     try:
-        url = requests.post(
-            'http://0.0.0.0:5000/search_user', data=dic)
+        url = requests.post('http://0.0.0.0:5000/search_user', data=dic)
         js = url.json()
 
         if (not js):
