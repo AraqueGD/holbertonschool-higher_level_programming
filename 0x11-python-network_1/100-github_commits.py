@@ -6,7 +6,7 @@ if __name__ == "__main__":
     repo = argv[1]
     user = argv[2]
     url = get(
-        'https://api.github.com/repos/{}/{}/commits'.format(repo, user))
+        'https://api.github.com/repos/{}/{}/commits'.format(user, repo))
     try:
         js = url.json()
         for ten in js[:10]:
