@@ -5,7 +5,6 @@ if __name__ == "__main__":
 
     url = get(
         'https://api.github.com/repos/{}/{}/commits'.format(argv[1], argv[2]))
-    # repo #user
     try:
         js = url.json()
         for ten in js[:10]:
@@ -18,4 +17,4 @@ if __name__ == "__main__":
                 name = author.get('name')
             print("{}: {}".format(sha, name))
     except ValueError:
-        print("No valid JSON")
+        print("Not valid JSON")
