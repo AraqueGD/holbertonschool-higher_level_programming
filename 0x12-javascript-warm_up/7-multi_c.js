@@ -3,8 +3,8 @@
 const num = parseInt(process.argv.slice(2));
 
 if ((isNaN(num))) {
-    console.log('Missing number of occurrences')
+  console.log('Missing number of occurrences');
 }
 for (let idx = 0; idx < num; idx++) {
-    console.log('C is fun');
+  console.log('C is fun');
 }
