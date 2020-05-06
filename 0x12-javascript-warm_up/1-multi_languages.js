@@ -1,6 +1,8 @@
 #!/usr/bin/node
 // Write a script that prints 3 lines
-const listLenguages = ['C is Fun', 'Python is cool', 'Javascript is amazing'];
-for (const eachList in listLenguages) {
-  console.log(listLenguages[eachList]);
-}
+const one = 'C is Fun';
+const two = 'Python is cool';
+const three = 'Javascript is amazing';
+console.log(one);
+console.log(two);
+console.log(three);
