@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// Print Number coberted to Integer argument.
 const args = process.argv.slice(2);
 
 const number = parseInt(args[0]);
