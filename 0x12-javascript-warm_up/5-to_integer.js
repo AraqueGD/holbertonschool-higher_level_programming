@@ -1,8 +1,6 @@
 #!/usr/bin/node
 // Print Number coberted to Integer argument.
-const args = process.argv.slice(2);
-
-const number = parseInt(args[0]);
+const number = parseInt(process.argv.slice(2));
 
 if ((Number.isNaN(number))) {
   console.log('Not a Number');
