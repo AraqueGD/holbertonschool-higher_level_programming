@@ -10,7 +10,7 @@ const fs = require('fs');
 const args = process.argv.slice(2);
 const content = args[1];
 try {
-  const file = fs.writeFileSync(args[0], content, 'utf-8', { flag: 'w+' });
+  const file = fs.writeFileSync(args[0], content, 'utf-8', { flag: 'r+' });
 } catch (err) {
   console.log(err);
 }
