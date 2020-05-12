@@ -7,10 +7,10 @@
 */
 const request = require('request');
 const args = process.argv.slice(2);
-request(args[0], function (error,response) {
-    if (error) {
-        console.error('error:', error);
-    } else {
-        console.log(`code: ${response.statusCode}`);
-    }
+request(args[0], function (error, response) {
+  if (error) {
+    console.error('error:', error);
+  } else {
+    console.log(`code: ${response.statusCode}`);
+  }
 });
