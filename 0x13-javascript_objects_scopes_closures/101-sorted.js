@@ -3,9 +3,9 @@
 const dic = require('./101-data').dict;
 const newDict = {};
 Object.keys(dic).map(function (key, index) {
-    if (newDict[dic[key]] === undefined) {
-      newDict[dic[key]] = [];
-    }
-    newDict[dic[key]].push(key);
-  });
-  console.log(newDict);
+  if (newDict[dic[key]] === undefined) {
+    newDict[dic[key]] = [];
+  }
+  newDict[dic[key]].push(key);
+});
+console.log(newDict);
