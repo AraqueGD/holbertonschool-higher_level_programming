@@ -14,7 +14,6 @@ request(url, function (error, response, body) {
   if (error) {
     console.error(error);
   } else {
-    console.error(error);
     const json = JSON.parse(body);
     for (const i of json.results) {
       for (const film of i.characters) {
